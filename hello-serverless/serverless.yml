@@ -23,6 +23,8 @@ frameworkVersion: "3"
 provider:
   name: aws
   runtime: nodejs18.x
+  region: ap-south-1
+  stage: dev
 
 # you can overwrite defaults here
 #  stage: dev
@@ -61,6 +63,14 @@ provider:
 functions:
   hello:
     handler: handler.hello
+
+  add:
+   handler: add.add
+   events:
+    - http:
+        path: math/add
+        method: post
+        cors: true
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details
