@@ -65,6 +65,12 @@ provider:
 functions:
   hello:
     handler: handler.hello
+    vpc:
+      subnetIds:
+        - subnet-02600a0e851a9f2fa
+        - subnet-0ea60bcc355a65b43
+      securityGroupIds:
+        - sg-04026ce1d3a928b86
 
   add:
    handler: add.add
